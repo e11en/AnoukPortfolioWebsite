@@ -357,3 +357,15 @@ nav a:hover {
 .contact-form h2 {
     margin-top: 0;
 }
+
+.portfolio-grid img {
+    height: 300px;
+    margin: 5px;
+}
+
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+}
