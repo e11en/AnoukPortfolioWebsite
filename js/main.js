@@ -1,13 +1,17 @@
 function sendEmail() {
 	var submitButton = $("#submit-btn");
+	var name = $('#name').val();
+	var email = $('#email').val();
+	var msg = $('#message').val();
+
 
 	if(validate()) {
 		submitButton.attr("disabled", true);
 		submitButton.val("Sending..");
 
-		emailjs.send("default_service","template_sGXgNCyQ",{name: "James", notes: "Check this out!"}) 
+		emailjs.send("default_service","anouk_default",{name: name, reply_to: email, message: msg}) 
 		.then(function(response) {
-		   //console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+		   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
 		   submitButton.addClass("btn-success");
 		   submitButton.val("Message send!");
 		   submitButton.removeAttr("disabled");
@@ -16,7 +20,7 @@ function sendEmail() {
 					resetForm();
 			}, 5000);
 		}, function(err) {
-		   //console.log("FAILED. error=", err);
+		   console.log("FAILED. error=", err);
 		   resetForm();
 		   $('#message').val("Something went wrong please contact the webmaster");
 		   submitButton.val("Error");
