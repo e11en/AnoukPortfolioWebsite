@@ -18,6 +18,13 @@
         <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("user_9CG4IMtmQ7A3AkI4hIDKi");
+           })();
+        </script>
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -83,10 +90,10 @@
                         <input type="email" class="form-control" id="email" placeholder="Enter email">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control"></textarea>
+                        <textarea id="message" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="submit" class="form-control" value="Send">
+                        <input type="submit" id="submit-btn" class="form-control btn btn-default" value="Send" onclick="sendEmail()">
                     </div>
                 </div>
             </div>
