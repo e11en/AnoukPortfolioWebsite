@@ -5,7 +5,7 @@ function sendEmail() {
 		submitButton.attr("disabled", true);
 		submitButton.val("Sending..");
 
-		emailjs.send("default_service","templat",{name: "James", notes: "Check this out!"}) //e_sGXgNCyQ
+		emailjs.send("default_service","template_sGXgNCyQ",{name: "James", notes: "Check this out!"}) 
 		.then(function(response) {
 		   //console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
 		   submitButton.addClass("btn-success");
