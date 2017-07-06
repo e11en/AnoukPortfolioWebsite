@@ -2,9 +2,14 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* Global styles */
+html,body{
+    height: 100%
+}
+
 body {
     background-color: #fafafa;
-    padding: 0 5em;
+    padding: 0;
+    margin: 0;
     font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 

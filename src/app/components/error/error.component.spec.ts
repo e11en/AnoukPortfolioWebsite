@@ -1,6 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { CoreModule } from '../../core/core.module';
 import { ErrorComponent } from './error.component';
 
 describe('ErrorComponent', () => {
@@ -8,8 +7,7 @@ describe('ErrorComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 ErrorComponent
-            ],
-            imports: [ CoreModule ]
+            ]
         }).compileComponents();
     }));
 
