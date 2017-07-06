@@ -1,0 +1,12 @@
+<header class="nav-header">
+    Angular 2
+</header>
+<div class="nav-menu-bar">
+    <ul>
+        <a *ngFor="let item of menuItems" routerLinkActive="router-link-active" [routerLink]="item.link">
+            <li>
+                {{item.caption}}
+            </li>
+        </a>
+    </ul>
+</div>

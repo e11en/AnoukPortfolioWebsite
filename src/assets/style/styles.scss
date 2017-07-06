@@ -1,0 +1,33 @@
+/* Global theme */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+/* Global styles */
+body {
+    background-color: #fafafa;
+    padding: 0 5em;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+}
+
+.pull-left {
+    float: left;
+}
+.pull-left:after {
+    clear: left;
+}
+
+.pull-right {
+    float: right;
+}
+.pull-right:after {
+    clear: right;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}

@@ -1,0 +1,31 @@
+.card-stand-alone {
+    margin-bottom: 1em;
+
+}
+
+.mat-card-content>:first-child {
+    margin-top: 1em;
+}
+
+.card-header-full-width {
+    width: calc(100% + 48px);
+    margin: -24px -24px 16px -24px!important;
+    padding-top: 20px;
+}
+
+.card-header-full-width .mat-card-title {
+    font-size: 1.5em;
+    margin-left: 1em;
+}
+
+.example-card {
+    width: 500px;
+    margin: 1em;
+    float: left;
+}
+
+.example-avatar-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+
