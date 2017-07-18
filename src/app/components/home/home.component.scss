@@ -1,0 +1,22 @@
+.portfolio-wrapper {
+  padding-top: 8em;
+  max-width: 850px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  display: table;
+}
+
+.portfolio-item {
+  background-color: #fff;
+  padding: 0.5em;
+  display: inline-block;
+  margin: 0.5em;
+}
+
+.portfolio-item img {
+  object-fit: cover;
+  width:250px;
+  height:250px
+}
+

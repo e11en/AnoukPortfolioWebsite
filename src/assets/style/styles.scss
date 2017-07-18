@@ -4,8 +4,8 @@
 /* Global styles */
 @font-face {
     font-family: Axis;
-    src: url('../font/axis.otf') format('opentype');
-    //,url('../font/axis.woff') format('woff');
+    src: url('../font/axis.otf') format('opentype'),
+         url('../font/axis.woff') format('woff');
 }
 
 html,body{
@@ -17,6 +17,7 @@ body {
     background-color: #fff;
     padding: 0;
     margin: 0;
+    min-width: 420px;
 }
 
 .pull-left {

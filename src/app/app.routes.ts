@@ -8,15 +8,21 @@ import { Routes, RouterModule } from '@angular/router';
 /* Routable components*/
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ContactComponent } from './components/contact/contact.component';
+
 
 export const AppRoutes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', component: HeaderComponent },
+    { path: 'contact', component: ContactComponent },
     { path: '**', component: ErrorComponent },
 ];
 
 export const routableComponents = [
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    HeaderComponent,
+    ContactComponent
 ];
 
 @NgModule({

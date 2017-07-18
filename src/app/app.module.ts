@@ -13,12 +13,11 @@ import { ExampleService } from './services/example.service';
 /* Components */
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
-import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent, NavComponent,
-    FooterComponent, routableComponents
+    routableComponents
   ],
   imports: [
     RouterModule, AppRoutingModule,
