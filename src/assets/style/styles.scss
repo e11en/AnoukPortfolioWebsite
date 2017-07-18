@@ -20,6 +20,12 @@ body {
     min-width: 420px;
 }
 
+input,
+textarea,
+button {
+    font-family: "Axis", Arial, sans-serif;
+}
+
 .pull-left {
     float: left;
 }
@@ -42,4 +48,24 @@ body {
 
 .clearfix:after {
     clear: both;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-primary {
+    border: none;
+    padding: 1em;
+    background-color: #eed9d6;
+}
+
+.btn-primary:hover {
+    border: none;
+    background-color: #dbc6c3;
+}
+
+.btn-primary:active {
+    border: none;
+    background-color: #eed9d6;
 }

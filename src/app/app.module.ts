@@ -13,11 +13,12 @@ import { ExampleService } from './services/example.service';
 /* Components */
 import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 @NgModule({
   declarations: [
     AppComponent, NavComponent,
-    routableComponents
+    routableComponents, PortfolioComponent
   ],
   imports: [
     RouterModule, AppRoutingModule,

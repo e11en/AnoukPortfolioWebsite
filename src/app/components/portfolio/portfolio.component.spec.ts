@@ -1,20 +1,18 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { ExampleService } from '../../services/example.service';
-import { HeaderComponent } from './header.component';
+import { PortfolioComponent } from './portfolio.component';
 
-describe('HeaderComponent', () => {
+describe('HomeComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
-                HeaderComponent
-            ],
-            providers: [ ExampleService ]
+                PortfolioComponent
+            ]
         }).compileComponents();
     }));
 
     it('should create the component', async(() => {
-        const fixture = TestBed.createComponent(HeaderComponent);
+        const fixture = TestBed.createComponent(PortfolioComponent);
         const app = fixture.debugElement.componentInstance;
         expect(app).toBeTruthy();
     }));
