@@ -2,15 +2,21 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /* Global styles */
+@font-face {
+    font-family: Axis;
+    src: url('../font/axis.otf') format('opentype');
+    //,url('../font/axis.woff') format('woff');
+}
+
 html,body{
-    height: 100%
+    height: 100%;
+    font-family: "Axis", Arial, sans-serif;
 }
 
 body {
-    background-color: #fafafa;
+    background-color: #fff;
     padding: 0;
     margin: 0;
-    font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
 .pull-left {

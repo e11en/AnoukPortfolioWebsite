@@ -1,7 +1,8 @@
 .nav-menu-bar {
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: 0;
+    min-width: 422px;
 }
 
 .nav-menu-bar ul {
@@ -12,11 +13,17 @@
 .nav-menu-bar li {
     float: left;
     color: #fafafa;
-    padding: 1.5em 1em;
+    padding: 0.5em 1em;
 }
 .nav-menu-bar li:hover {
-    background-color: rgba(255,255,255,0.20);
+    //background-color: rgba(255,255,255,0.20);
+
 }
 .nav-menu-bar li a {
     text-decoration: none;
+    color: #000;
+}
+
+.nav-menu-bar li a:hover {
+    color: #646464;
 }
