@@ -4,13 +4,13 @@
         NEEM VOOR VRAGEN OF VRIJBLIJVENDE INFORMATIE CONTACT MET MIJ OP!
     </p>
 
-    <input class="contact-input" type="text" placeholder="NAAM" name="name" id="name">
+    <input class="contact-input" type="text" placeholder="NAAM" id="name" [(ngModel)]="name">
 
-    <input class="contact-input" type="text" placeholder="EMAIL" name="email" id="email">
+    <input class="contact-input" type="text" placeholder="EMAIL" id="email" [(ngModel)]="email">
 
-    <textarea class="contact-input" placeholder="BERICHT"></textarea>
+    <textarea class="contact-input" placeholder="MESSAGE" id="message" [(ngModel)]="message"></textarea>
 
-    <button class="btn-primary">SEND</button>
+    <button (click)="submit()" type="submit" class="btn-primary">SEND</button>
     <div class="clearfix"></div>
 </div>
 

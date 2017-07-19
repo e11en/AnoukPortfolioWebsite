@@ -1,6 +1,5 @@
 import { TestBed, async } from '@angular/core/testing';
 
-import { ExampleService } from '../../services/example.service';
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -8,8 +7,7 @@ describe('ContactComponent', () => {
         TestBed.configureTestingModule({
             declarations: [
                 ContactComponent
-            ],
-            providers: [ ExampleService ]
+            ]
         }).compileComponents();
     }));
 

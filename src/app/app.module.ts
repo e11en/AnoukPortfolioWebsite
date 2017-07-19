@@ -3,12 +3,10 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 /* Modules */
 import { AppRoutingModule, routableComponents } from './app.routes';
-
-/* Services */
-import { ExampleService } from './services/example.service';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -22,12 +20,12 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
   ],
   imports: [
     RouterModule, AppRoutingModule,
-    HttpModule, CommonModule
+    HttpModule, CommonModule, BrowserModule,
+    FormsModule
   ],
   exports: [
     BrowserModule, CommonModule
   ],
-  providers: [ ExampleService ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
