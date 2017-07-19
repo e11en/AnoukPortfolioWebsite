@@ -2,12 +2,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    min-width: 422px;
+    padding-right: 3em;
 }
 
 .nav-menu-bar ul {
     list-style-type: none;
-    margin-right: 3em;
+    margin: 0;
+    padding: 0;
+    min-width: 334px;
 }
 
 .nav-menu-bar li {
@@ -15,10 +17,7 @@
     color: #fafafa;
     padding: 0.5em 1em;
 }
-.nav-menu-bar li:hover {
-    //background-color: rgba(255,255,255,0.20);
 
-}
 .nav-menu-bar li a {
     text-decoration: none;
     color: #000;
@@ -26,4 +25,10 @@
 
 .nav-menu-bar li a:hover {
     color: #646464;
+}
+
+@media only screen and (max-width: 440px) {
+    .nav-menu-bar {
+        padding-right: 0;
+    }
 }

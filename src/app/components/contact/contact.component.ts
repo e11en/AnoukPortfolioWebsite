@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 declare let $: any;
 
-
 @Component({
     templateUrl: './contact.component.html',
     styleUrls: ['./contact.component.scss']

@@ -15,11 +15,11 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])){
     $content .= '</table>';
     $content .= '</body></html>';
 
-    $headers = "From: test@anoukstouten.com\r\n";
+    $headers = "From: mail@anoukstouten.com\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-    mail("test@anoukstouten.com","Nieuw bericht van anoukstouten.com",$content, $headers);
+    mail("mail@anoukstouten.com","Nieuw bericht van anoukstouten.com",$content, $headers);
 } else {
     echo 'fail';
 }
