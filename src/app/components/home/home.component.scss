@@ -1,8 +1,29 @@
 .logo-wrapper {
-
+  text-align: center;
 }
 
-.logo-wrapper img {
-  width: 50%;
-  margin: 0 auto;
+img {
+  width: 12em;
 }
+
+.name {
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+hr {
+  width: 4em;
+  height: 0.4em;
+  background-color: #000;
+}
+
+.first {
+  margin-top: 2em;
+}
+
+
+.small {
+  font-size: 1em;
+  line-height: 50%;
+}
+
