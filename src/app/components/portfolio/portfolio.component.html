@@ -1,5 +1,24 @@
 <div class="portfolio-wrapper">
     <div class="portfolio-item" *ngFor="let image of images; let myIndex = index">
-        <img src="assets/img/portfolio/{{image}}">
+        <img src="assets/img/portfolio/{{image}}" (click)="openModal(myIndex)">
+    </div>
+</div>
+
+<div *ngIf="selectedImage" (click)="toggleModal()" class="overlay"></div>
+<div *ngIf="selectedImage" class="modal">
+    <div class="modal-body">
+        <table>
+            <tr>
+                <td class="arrow" (click)="previous()">
+                    <span *ngIf="selectedImageIndex > 0"><</span>
+                </td>
+                <td>
+                    <img src="assets/img/portfolio/{{selectedImage}}">
+                </td>
+                <td class="arrow" (click)="next()">
+                    <span *ngIf="selectedImageIndex < images.length - 1">></span>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>

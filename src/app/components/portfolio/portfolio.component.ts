@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+declare let $: any;
 
 @Component({
     selector: 'app-portfolio',
@@ -6,6 +7,9 @@ import { Component } from '@angular/core';
     styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
+
+    selectedImage: string;
+    selectedImageIndex: number;
 
     images = [
         'anouk (1).JPG',
@@ -46,6 +50,33 @@ export class PortfolioComponent {
         'anouk (36).JPG',
         'anouk (37).JPG'
     ];
+
+    openModal(index) {
+        this.setSelectedImage(index);
+        this.toggleModal();
+    }
+
+    setSelectedImage(index) {
+        this.selectedImageIndex = index;
+        this.selectedImage = this.images[index];
+    }
+
+    toggleModal() {
+        $('.overlay').toggleClass('hidden');
+        $('.modal').toggleClass('hidden');
+    }
+
+    previous() {
+        if ((this.selectedImageIndex - 1) >= 0) {
+            this.setSelectedImage(this.selectedImageIndex - 1);
+        }
+    }
+
+    next() {
+        if ((this.selectedImageIndex - 1) < this.images.length) {
+            this.setSelectedImage(this.selectedImageIndex + 1);
+        }
+    }
 
     // TODO: nog iets van een auto reader maken van alle image namen
 }
