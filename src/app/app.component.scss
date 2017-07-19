@@ -20,12 +20,17 @@
     min-height: calc(100vh - 88px);
 }
 
-.footer-wrapper {
-    background-color: gainsboro;
-    bottom: 0;
-    height: 100px;
-    left: 0;
+footer {
     position: absolute;
-    right: 0;
-    padding: 1.5em 1em;
+    font-size: 0.8em;
+    bottom: 0;
+    right: 2em;
+}
+
+footer a {
+    color: #000;
+}
+
+footer img {
+    width: 1em;
 }
