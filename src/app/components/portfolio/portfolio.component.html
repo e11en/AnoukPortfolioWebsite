@@ -1,24 +1,28 @@
 <div class="portfolio-wrapper">
     <div class="portfolio-item" *ngFor="let image of images; let myIndex = index">
-        <img src="assets/img/portfolio/{{image}}" (click)="openModal(myIndex)">
+        <a href="#portfolioModal" data-toggle="modal" (click)="setSelectedImage(myIndex)"><img src="assets/img/portfolio/{{image}}"></a>
     </div>
 </div>
 
-<div *ngIf="selectedImage" (click)="toggleModal()" class="overlay"></div>
-<div *ngIf="selectedImage" class="modal">
-    <div class="modal-body">
-        <table>
-            <tr>
-                <td class="arrow" (click)="previous()">
-                    <span *ngIf="selectedImageIndex > 0"><</span>
-                </td>
-                <td>
-                    <img src="assets/img/portfolio/{{selectedImage}}">
-                </td>
-                <td class="arrow" (click)="next()">
-                    <span *ngIf="selectedImageIndex < images.length - 1">></span>
-                </td>
-            </tr>
-        </table>
+<div id="portfolioModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <table *ngIf="selectedImageIndex">
+                    <tr>
+                        <td class="arrow" (click)="previous()">
+                            <span *ngIf="selectedImageIndex > 0"><</span>
+                        </td>
+                        <td>
+                            <img src="assets/img/portfolio/{{selectedImage}}">
+                        </td>
+                        <td class="arrow" (click)="next()">
+                            <span *ngIf="selectedImageIndex < images.length - 1">></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
     </div>
 </div>

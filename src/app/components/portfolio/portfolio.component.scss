@@ -20,42 +20,37 @@
   height:250px
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.4);;
+.portfolio-item a {
+
 }
 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 1em 0;
-  background-color: #fff;
+@media only screen and (max-width: 360px) {
+  .portfolio-item {
+    margin: 0.5em 0;
+  }
 }
 
-.modal-body {
-  //height: 200px;
-  //max-width: 1000px;
-  ////max-height: 500px;
-  position: fixed;
-  margin: 5em;
-  width: calc(100% - 10em);
-  top: 4em;
-  left: 0;
-  //top: 50%;
-  //left: 50%;
-  //transform: translate(-50%, -50%);
-  padding: 1em 0;
-  background-color: #fff;
-  //overflow: hidden;
-}
+/* Modal */
 
 .modal-body img {
   max-width: 100%;
+}
+
+.close {
+  opacity: 1;
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  color: #000;
+}
+
+.close:hover {
+  color: #b0b0b0;
 }
 
 .arrow {
@@ -67,23 +62,11 @@
 
 .arrow:hover {
   color: #b0b0b0;
+  cursor: pointer;
 }
 
-.hidden {
-  display: none;
-}
-
-@media only screen and (max-width: 360px) {
-  .portfolio-item {
-    margin: 0.5em 0;
-  }
-}
-
-@media only screen and (max-width: 750px) {
-  .modal-body {
-    width: calc(100% - 2em);
-    top: 4em;
-    left: 0;
-    margin: 1em;
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 768px;
   }
 }
