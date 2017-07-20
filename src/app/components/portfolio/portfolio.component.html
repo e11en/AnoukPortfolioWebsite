@@ -18,7 +18,7 @@
                             <img src="assets/img/portfolio/{{selectedImage}}">
                         </td>
                         <td class="arrow" (click)="next()">
-                            <span>></span>
+                            <span *ngIf="selectedImageIndex < images.length">></span>
                         </td>
                     </tr>
                 </table>
