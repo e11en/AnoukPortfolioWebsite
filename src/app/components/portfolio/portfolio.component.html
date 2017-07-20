@@ -1,6 +1,6 @@
 <div class="portfolio-wrapper">
     <div class="portfolio-item" *ngFor="let image of images; let myIndex = index">
-        <a href="#portfolioModal" data-toggle="modal" (click)="setSelectedImage(myIndex)"><img src="assets/img/portfolio/{{image}}"></a>
+        <a href="#portfolioModal" data-toggle="modal" (click)="setSelectedImage(myIndex + 1)"><img src="assets/img/portfolio/thumbnails/{{image}}"></a>
     </div>
 </div>
 
@@ -12,13 +12,13 @@
                 <table *ngIf="selectedImageIndex">
                     <tr>
                         <td class="arrow" (click)="previous()">
-                            <span *ngIf="selectedImageIndex > 0"><</span>
+                            <span *ngIf="selectedImageIndex > 1"><</span>
                         </td>
                         <td>
                             <img src="assets/img/portfolio/{{selectedImage}}">
                         </td>
                         <td class="arrow" (click)="next()">
-                            <span *ngIf="selectedImageIndex < images.length - 1">></span>
+                            <span>></span>
                         </td>
                     </tr>
                 </table>
