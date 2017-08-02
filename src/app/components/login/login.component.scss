@@ -1,0 +1,20 @@
+.login-wrapper {
+  background-color: #ffffff;
+  width: 500px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.mat-input-container {
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+}
+
+@media screen and (max-width: 600px) {
+  .login-wrapper {
+    width: 100%;
+  }
+}

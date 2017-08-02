@@ -1,0 +1,12 @@
+<div class="login-wrapper" *ngIf="!authService.isLoggedIn">
+    <md-input-container>
+        <input mdInput [(ngModel)]="credentials.email" type="email" placeholder="Email">
+    </md-input-container>
+    <md-input-container>
+        <input mdInput [(ngModel)]="credentials.password" type="password" placeholder="Password">
+        <md-hint align="end" class="error-message">{{credentials.error}}</md-hint>
+    </md-input-container>
+
+    <button class="btn-primary" (click)="login(credentials)" *ngIf="!(authService.isLoggedIn | async)?.uid">Login</button>
+    <button (click)="logout()" *ngIf="(authService.isLoggedIn | async)?.uid">Logout</button>
+</div>

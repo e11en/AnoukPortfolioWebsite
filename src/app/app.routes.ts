@@ -9,11 +9,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AdminComponent } from './components/admin/admin.component';
 
+/* Child components */
+import { LoginComponent } from './components/login/login.component';
 
 export const AppRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'admin', component: AdminComponent },
     // { path: 'about', component: AboutComponent },
     { path: '**', component: HomeComponent },
 ];
@@ -21,7 +25,12 @@ export const AppRoutes: Routes = [
 export const routableComponents = [
     HomeComponent,
     ErrorComponent,
-    ContactComponent
+    ContactComponent,
+    AdminComponent
+];
+
+export const childComponents = [
+    LoginComponent
 ];
 
 @NgModule({
