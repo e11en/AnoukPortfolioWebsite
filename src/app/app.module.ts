@@ -20,13 +20,14 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 /* Services */
 import { AuthService } from './services/auth.service';
+import { UploadService } from './services/upload.service';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyAci5Oo8U2kM586s57Nn98-9gkADJ8DSpw',
   authDomain: 'anoukstouten-6c5df.firebaseapp.com',
   databaseURL: 'https://anoukstouten-6c5df.firebaseio.com',
   projectId: 'anoukstouten-6c5df',
-  storageBucket: '',
+  storageBucket: 'gs://anoukstouten-6c5df.appspot.com/',
   messagingSenderId: '77126525968'
 };
 
@@ -49,6 +50,6 @@ export const firebaseConfig = {
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [AuthService]
+  providers: [AuthService, UploadService]
 })
 export class AppModule { }

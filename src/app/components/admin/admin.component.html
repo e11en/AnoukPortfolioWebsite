@@ -1,1 +1,5 @@
 <app-login></app-login>
+
+<div *ngIf="authService.isLoggedIn">
+    <app-upload></app-upload>
+</div>

@@ -7,6 +7,8 @@
         <md-hint align="end" class="error-message">{{credentials.error}}</md-hint>
     </md-input-container>
 
-    <button class="btn-primary" (click)="login(credentials)" *ngIf="!(authService.isLoggedIn | async)?.uid">Login</button>
-    <button (click)="logout()" *ngIf="(authService.isLoggedIn | async)?.uid">Logout</button>
+    <button class="btn-primary" (click)="login(credentials)" *ngIf="!(authService.isLoggedIn | async)?.uid">LOGIN</button>
+    <button (click)="logout()" *ngIf="(authService.isLoggedIn | async)?.uid">LOGOUT</button>
+
+    <!-- TODO: Make logout button visible! -->
 </div>

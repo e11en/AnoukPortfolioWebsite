@@ -12,7 +12,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AdminComponent } from './components/admin/admin.component';
 
 /* Child components */
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './components/admin/login/login.component';
+import { UploadComponent } from './components/admin/upload/upload.component';
 
 export const AppRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -30,7 +31,8 @@ export const routableComponents = [
 ];
 
 export const childComponents = [
-    LoginComponent
+    LoginComponent,
+    UploadComponent
 ];
 
 @NgModule({

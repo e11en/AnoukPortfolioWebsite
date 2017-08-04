@@ -1,0 +1,14 @@
+<div class="upload-wrapper">
+    <div class="upload-area" (click)="selectFile()">
+        <input multiple type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
+        <md-icon>cloud_upload</md-icon> <br>
+        Drag and drop file or click
+    </div>
+
+    <button class="btn-primary" (click)="upload()">
+        UPLOAD
+    </button>
+    <div class="clearfix"></div>
+
+    {{status}}
+</div>
