@@ -1,5 +1,5 @@
 <div class="upload-wrapper">
-    <div class="upload-area" (click)="selectFile()">
+    <div class="upload-area" (click)="selectFile()" appDnd (filesChangeEmiter)="onFilesChange($event)" [allowed_extensions]="['png', 'jpg', 'bmp']">
         <input multiple type="file" (change)="onNativeInputFileSelect($event)" #inputFile hidden />
         <md-icon>cloud_upload</md-icon> <br>
         Drag and drop file or click
@@ -18,3 +18,5 @@
         </md-progress-bar>
     </div>
 </div>
+
+

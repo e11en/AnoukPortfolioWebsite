@@ -22,6 +22,9 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { AuthService } from './services/auth.service';
 import { UploadService } from './services/upload.service';
 
+/* Directives */
+import { DndDirective } from './directives/drag-n-drop.directive';
+
 export const firebaseConfig = {
   apiKey: 'AIzaSyAci5Oo8U2kM586s57Nn98-9gkADJ8DSpw',
   authDomain: 'anoukstouten-6c5df.firebaseapp.com',
@@ -35,7 +38,7 @@ export const firebaseConfig = {
   declarations: [
     AppComponent, NavComponent,
     routableComponents, PortfolioComponent,
-    childComponents
+    childComponents, DndDirective
   ],
   imports: [
     RouterModule, AppRoutingModule,

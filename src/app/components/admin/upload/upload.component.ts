@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
+import {Component, Directive, ElementRef, EventEmitter, HostListener, Output, ViewChild} from '@angular/core';
 import * as _ from 'lodash';
 
 import { UploadService } from '../../../services/upload.service';
@@ -19,21 +19,15 @@ export class UploadComponent {
     }
 
     upload() {
-        this.uploadService.pushUploadMultiple(this.files, 'test/').subscribe(progress => {
-            console.log(progress);
-        });
+        this.uploadService.pushUploadMultiple(this.files, 'test/').subscribe();
         this.uploadReady = false;
     }
 
     onNativeInputFileSelect($event) {
-        _.each($event.srcElement.files, (file) => {
-            this.files.push(new FileUpload(file));
-        });
-        this.uploadReady = true;
+        this.setFiles($event.srcElement.files);
     }
 
     selectFile() {
-        this.files = [];
         this.nativeInputFile.nativeElement.click();
     }
 
@@ -42,6 +36,18 @@ export class UploadComponent {
             file.progress > 1 ?
                 file.progress === 100 ? 'determined' : 'indeterminate'
             : 'indeterminate' : 'determinate';
+    }
+
+    onFilesChange(fileList: Array<File>) {
+        this.setFiles(fileList);
+    }
+
+    setFiles(files: any[]) {
+        this.files = [];
+        _.each(files, (file) => {
+            this.files.push(new FileUpload(file));
+        });
+        this.uploadReady = true;
     }
 }
 
