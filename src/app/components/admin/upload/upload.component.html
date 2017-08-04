@@ -5,10 +5,16 @@
         Drag and drop file or click
     </div>
 
-    <button class="btn-primary" (click)="upload()">
+    <button *ngIf="uploadReady" class="btn-primary" (click)="upload()">
         UPLOAD
     </button>
     <div class="clearfix"></div>
 
-    {{status}}
+    <div *ngFor="let file of files; let myIndex = index">
+        {{file.file.name}}<span *ngIf="file.progress"> - {{file.progress}}%</span>
+        <md-progress-bar
+                [mode]="getProgressMode(file)"
+                [value]="file.progress">
+        </md-progress-bar>
+    </div>
 </div>

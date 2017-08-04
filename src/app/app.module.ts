@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { MdInputModule, MdIconModule } from '@angular/material';
+import { MdInputModule, MdIconModule, MdProgressBarModule } from '@angular/material';
 
 /* Modules */
 import { AppRoutingModule, routableComponents, childComponents } from './app.routes';
@@ -43,7 +43,7 @@ export const firebaseConfig = {
     FormsModule, MdInputModule, BrowserAnimationsModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule, MdIconModule,
-    AngularFireAuthModule
+    AngularFireAuthModule, MdProgressBarModule
   ],
   exports: [
     BrowserModule, CommonModule

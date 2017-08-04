@@ -3,6 +3,7 @@ import * as firebase from 'firebase';
 import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { NextObserver } from 'rxjs/Observer';
+import { FileUpload } from '../models/file-upload.model';
 
 @Injectable()
 export class UploadService {
@@ -22,11 +23,12 @@ export class UploadService {
         });
     }
 
-    pushUploadMultiple(files: File[], basePath: string): Observable<any> {
+    pushUploadMultiple(files: FileUpload[], basePath: string): Observable<any> {
         return Observable.create((observer: NextObserver<any>) => {
             _.each(files, (file) => {
-                this.pushUpload(file, basePath + file.name).subscribe(data => {
-                    observer.next(<any>data);
+                this.pushUpload(file.file, basePath + file.file.name).subscribe(data => {
+                    file.progress = data === 0 ? 1 : data;
+                    observer.next(<any>file.progress);
                 });
             });
         });

@@ -1,6 +1,8 @@
 import {Component, ElementRef, EventEmitter, Output, ViewChild} from '@angular/core';
-import { UploadService } from '../../../services/upload.service';
 import * as _ from 'lodash';
+
+import { UploadService } from '../../../services/upload.service';
+import { FileUpload } from '../../../models/file-upload.model';
 
 @Component({
     templateUrl: './upload.component.html',
@@ -8,39 +10,39 @@ import * as _ from 'lodash';
     selector: 'app-upload',
 })
 export class UploadComponent {
-
-    @Output() onFileSelect: EventEmitter<File[]> = new EventEmitter();
     @ViewChild('inputFile') nativeInputFile: ElementRef;
-    status: any;
-
-    private _files: File[];
     files: FileUpload[];
+    uploadReady = false;
 
-    constructor(private uploadService: UploadService) { }
+    constructor(private uploadService: UploadService) {
+        this.files = [];
+    }
 
     upload() {
-        this.uploadService.pushUploadMultiple(this._files, 'test/').subscribe(progress => {
+        this.uploadService.pushUploadMultiple(this.files, 'test/').subscribe(progress => {
             console.log(progress);
-            this.status = progress;
         });
+        this.uploadReady = false;
     }
 
     onNativeInputFileSelect($event) {
-        this._files = $event.srcElement.files;
-        this.onFileSelect.emit(this._files);
-
-        _.each(this._files, (file) => {
+        _.each($event.srcElement.files, (file) => {
             this.files.push(new FileUpload(file));
         });
+        this.uploadReady = true;
     }
 
     selectFile() {
+        this.files = [];
         this.nativeInputFile.nativeElement.click();
+    }
+
+    getProgressMode(file: FileUpload): string {
+        return file.progress ?
+            file.progress > 1 ?
+                file.progress === 100 ? 'determined' : 'indeterminate'
+            : 'indeterminate' : 'determinate';
     }
 }
 
-class FileUpload {
-    status: string;
 
-    constructor(public file: File) { }
-}
