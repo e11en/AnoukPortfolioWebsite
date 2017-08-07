@@ -20,7 +20,7 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 
 /* Services */
 import { AuthService } from './services/auth.service';
-import { UploadService } from './services/upload.service';
+import { FirebaseService } from './services/firebase.service';
 
 /* Directives */
 import { DndDirective } from './directives/drag-n-drop.directive';
@@ -53,6 +53,6 @@ export const firebaseConfig = {
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: [AuthService, UploadService]
+  providers: [AuthService, FirebaseService]
 })
 export class AppModule { }

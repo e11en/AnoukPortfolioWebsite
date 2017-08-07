@@ -1,7 +1,7 @@
 import {Component, Directive, ElementRef, EventEmitter, HostListener, Output, ViewChild} from '@angular/core';
 import * as _ from 'lodash';
 
-import { UploadService } from '../../../services/upload.service';
+import { FirebaseService } from '../../../services/firebase.service';
 import { FileUpload } from '../../../models/file-upload.model';
 
 @Component({
@@ -14,12 +14,12 @@ export class UploadComponent {
     files: FileUpload[];
     uploadReady = false;
 
-    constructor(private uploadService: UploadService) {
+    constructor(private firebaseService: FirebaseService) {
         this.files = [];
     }
 
     upload() {
-        this.uploadService.pushUploadMultiple(this.files, 'test/').subscribe();
+        this.firebaseService.pushUploadMultiple(this.files, 'test/').subscribe();
         this.uploadReady = false;
     }
 

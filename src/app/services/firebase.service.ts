@@ -4,9 +4,10 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs/Observable';
 import { NextObserver } from 'rxjs/Observer';
 import { FileUpload } from '../models/file-upload.model';
+import { SnapShot } from '../models/snapshot.model';
 
 @Injectable()
-export class UploadService {
+export class FirebaseService {
     private basePath = '/uploads';
 
     pushUpload(file: Blob, path: string): Observable<any> {
@@ -33,9 +34,6 @@ export class UploadService {
             });
         });
     }
-}
 
-class SnapShot {
-    bytesTransferred: number;
-    totalBytes: number;
+
 }
