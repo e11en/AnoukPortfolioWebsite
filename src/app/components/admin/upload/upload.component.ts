@@ -16,6 +16,12 @@ export class UploadComponent {
 
     constructor(private firebaseService: FirebaseService) {
         this.files = [];
+        firebaseService.DatabaseGet('portfolio', '1').then(snapshot => {
+            _.each(snapshot, (entry) => {
+                console.log(entry);
+                console.log(entry.val());
+            });
+        });
     }
 
     upload() {

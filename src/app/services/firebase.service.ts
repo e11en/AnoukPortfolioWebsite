@@ -35,5 +35,26 @@ export class FirebaseService {
         });
     }
 
+    testDatabase() {
+        // const database = firebase.database();
+        firebase.database().ref('portfolio/' + 1).set({
+            base64: '',
+            name: 'test123',
+            position: 1
+        });
+    }
+
+    DatabaseSet(table: string, id: string, data: {}) {
+        return firebase.database().ref(table + '/' + id).set(data);
+    }
+
+    DatabaseGet(table: string, id: string) {
+        return firebase.database().ref(table + '/').once('value');
+    }
+
+    DatabaseRemove(table: string, id: string) {
+        return firebase.database().ref(table + '/' + id).remove();
+    }
+
 
 }
