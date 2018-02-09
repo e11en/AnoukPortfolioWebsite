@@ -14,7 +14,7 @@ export class DropboxService {
 
     constructor(http: Http) {
         this.http = http;
-        this.dropbox = new Dropbox({ accessToken: 'O-uco2zk0boAAAAAAACg6swMs66KniubllZPVDl8lW417JqXzpdclK4qZsxWeUjG' });
+        this.dropbox = new Dropbox({ accessToken: '[API-KEY]' });
         this.doSomething();
     }
 
