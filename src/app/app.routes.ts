@@ -10,7 +10,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ContactComponent } from './components/contact/contact.component';
 
-
 export const AppRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'contact', component: ContactComponent },
